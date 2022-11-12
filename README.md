@@ -13,6 +13,12 @@ This is a solution for the front-end part of the test
     # Cloning this repo into your sytem
     git clone https://github.com/Arcturus91/toolboxTest-frontEnd.git
     ```
+
+    ```sh
+    # Once installed in your computer, install the dependencies
+    npm i
+    ```
+    
     
 2. **Runing the project**
 
