@@ -21,8 +21,8 @@ This is a solution for the test
 - To look at the code, just open up the project in your favorite code editor!
 
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+
+    <img alt="frontEnd full" src="https://res.cloudinary.com/dad5dandd/image/upload/v1668243042/ToolBox/Screen_Shot_2022-11-12_at_03.49.59_cyl7v4.png" width="60" />
   </a>
 </p>
 <h1 align="center">
