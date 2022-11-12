@@ -33,7 +33,7 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-    setShowAlert(false)
+    setShowAlert(false);
     getData()
       .then((res) => {
         setFiles(res.data);
