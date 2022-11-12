@@ -3,31 +3,69 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const TableData = (props) => {
   const { files } = props;
-  console.log(files);
 
   return (
-    <Table striped bordered hover>
-      <thead>
-        <tr>
-          <th>File Name</th>
-          <th>Text</th>
-          <th>Number</th>
-          <th>Hex</th>
-        </tr>
-      </thead>
-      <tbody>
-        {files.map((item, index) => {
-          return (
-            <tr key={index}>
-              <td>{item.file}</td>
-              <td>{item.lines[0].text}</td>
-              <td>{item.lines[0].number}</td>
-              <td>{item.lines[0].hex}</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </Table>
+    <>
+      {Array.isArray(files) ? (
+        <>
+          <Table striped bordered hover style={{ margin: 20 }}>
+            <thead>
+              <tr>
+                <th>File Name</th>
+                <th>Text</th>
+                <th>Number</th>
+                <th>Hex</th>
+              </tr>
+            </thead>
+            <tbody>
+              {files.map((item) => {
+                return (
+                  <>
+                    {item.lines.map((subItem, idx) => {
+                      return (
+                        <tr key={idx}>
+                          <td>{item.file}</td>
+                          <td>{subItem.text}</td>
+                          <td>{subItem.number}</td>
+                          <td>{subItem.hex}</td>
+                        </tr>
+                      );
+                    })}
+                  </>
+                );
+              })}
+            </tbody>
+          </Table>
+        </>
+      ) : (
+        <>
+          <Table striped bordered hover style={{ margin: 20 }}>
+            <thead>
+              <tr>
+                <th>File Name</th>
+                <th>Text</th>
+                <th>Number</th>
+                <th>Hex</th>
+              </tr>
+            </thead>
+            <tbody>
+              <>
+                {files.lines.map((subItem, idx) => {
+                  return (
+                    <tr key={idx}>
+                      <td>{files.file}</td>
+                      <td>{subItem.text}</td>
+                      <td>{subItem.number}</td>
+                      <td>{subItem.hex}</td>
+                    </tr>
+                  );
+                })}
+              </>
+            </tbody>
+          </Table>
+        </>
+      )}
+    </>
   );
 };
 
